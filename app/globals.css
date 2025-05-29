@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 330 81% 84%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --primary-500: 330 81% 60%;
+    --primary-400: 330 81% 70%;
+    --primary-600: 330 81% 50%;
+    --secondary: 150 30% 84%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 330 81% 84%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 330 81% 84%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --primary-500: 330 81% 60%;
+    --primary-400: 330 81% 70%;
+    --primary-600: 330 81% 50%;
+    --secondary: 150 30% 84%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 330 81% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.font-script {
+  font-family: var(--font-dancing-script);
+}
+
+.category-item {
+  @apply flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105;
+}
+
+.category-image {
+  @apply rounded-full overflow-hidden border-4 border-primary/20 bg-secondary/10;
+}
+
+.product-card {
+  @apply rounded-lg overflow-hidden border border-border bg-card transition-all hover:shadow-md;
+}
+
+.product-card:hover .product-image {
+  @apply scale-105;
+}
+
+.product-image {
+  @apply transition-transform duration-300;
+}
+
+.featured-badge {
+  @apply absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-medium px-2 py-1 rounded-full;
+}
+
+.sale-badge {
+  @apply absolute top-3 left-3 bg-destructive text-destructive-foreground text-xs font-medium px-2 py-1 rounded-full;
+}
+
+.new-badge {
+  @apply absolute top-3 left-3 bg-secondary text-secondary-foreground text-xs font-medium px-2 py-1 rounded-full;
+}
